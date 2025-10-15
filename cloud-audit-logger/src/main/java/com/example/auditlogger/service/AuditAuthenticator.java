@@ -1,6 +1,6 @@
 package com.example.auditlogger.service;
 
-public class Authenticator {
+public class AuditAuthenticator {
 
     private final String username;
 
@@ -8,9 +8,9 @@ public class Authenticator {
 
     private final String token;
 
-    public Authenticator(String username, String password, String token) {
+    public AuditAuthenticator(String username, String password, String token) {
 
-        if(username.isBlank() || password.isBlank() || token.isBlank()) {
+        if(isNullOrBlank(username) || isNullOrBlank(password) || isNullOrBlank(token)) {
             throw new IllegalArgumentException("Credentials must be provided");
         }
 
@@ -19,11 +19,15 @@ public class Authenticator {
         this.token = token;
     }
 
-    public boolean authenticate() {
+    public boolean isAuthenticated() {
         return true; // replace with real cloud authentication
     }
 
     public String getUsername() {
         return username;
+    }
+    
+    private boolean isNullOrBlank(String param) {
+    	return param == null || param.isBlank();
     }
 }
