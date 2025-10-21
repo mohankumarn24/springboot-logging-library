@@ -5,8 +5,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.auditlogger.service.AuditTrailService;
+import org.springframework.context.annotation.Import;
+
+// import com.example.auditlogger.service.AuditConfiguration;
 
 @SpringBootApplication
+// @Import(AuditConfiguration.class) // if AuditTrailConfig.java is present in logging library instead of this project. Also -> @Import({A.class, B.class})
 public class ClientApplication implements CommandLineRunner {
 
     @Autowired
