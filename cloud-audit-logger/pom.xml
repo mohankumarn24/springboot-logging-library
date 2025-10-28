@@ -14,7 +14,9 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter for logging -->
+        <!-- Spring Boot Starter for logging: Lightweight, no forced web stack -->
+        <!-- Includes: spring-boot (core framework), spring-boot-autoconfigure (auto-configuration support), spring-boot-starter-logging (Logback by default), spring-core, spring-context, etc. -->
+        <!-- Does not include: Any web-related libraries (like embedded tomcat, web components (Spring MVC), json processing (Jackson), etc.) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
